@@ -10,8 +10,8 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    sudo cp -r * /var/www/html/
-                    sudo systemctl restart nginx
+                    cp -r * /var/www/html/
+                    systemctl restart nginx
                     '''
                 }
             }
