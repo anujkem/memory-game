@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    cp -r * /var/www/html/
+                    cp -r * /var/www/html/memory-game/
                     systemctl restart nginx
                     '''
                 }
