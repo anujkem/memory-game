@@ -10,8 +10,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                sudo cp -r * /var/www/html/memory-game
-                sudo systemctl restart nginx
+                cp -r Jenkinsfile README.md anaconda.png bee.png chameleon.png cockatoo.png crocodile.png gorilla.png index.html macaw.png monkey.png piranha.png script.js sloth.png style.css tiger.png toucan.png /var/www/html/memory-game
+                systemctl restart nginx
                 '''
             }
         }
