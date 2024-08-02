@@ -10,7 +10,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                sudo cp -r * /var/www/your_project
+                sudo cp -r * /var/www/html/memory-game
                 sudo systemctl restart nginx
                 '''
             }
