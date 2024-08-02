@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-repository.git'
+                git 'https://github.com/anujkem/memory-game.git'
             }
         }
         stage('Deploy') {
             steps {
                 sh '''
-                sudo cp -r * /var/www/your_project
+                sudo cp -r * /var/www/html/memory-game
                 sudo systemctl restart nginx
                 '''
             }
