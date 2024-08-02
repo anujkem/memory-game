@@ -1,19 +1,18 @@
 pipeline {
     agent any
+
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/anujkem/memory-game.git'
+                git 'https://github.com/your-repository.git'
             }
         }
         stage('Deploy') {
             steps {
-                script {
-                    sh '''
-                    sudo cp -r * /var/www/html/
-                    sudo systemctl restart nginx
-                    '''
-                }
+                sh '''
+                sudo cp -r * /var/www/your_project
+                sudo systemctl restart nginx
+                '''
             }
         }
     }
