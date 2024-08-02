@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DEPLOY_SERVER = '65.0.142.195'
-        SSH_CREDENTIALS_ID = 'your-ssh-credentials-id'  // Replace with your actual credentials ID
+        SSH_CREDENTIALS_ID = 'bc7e84f4-244a-4656-867b-add45d838e05'  // Replace with your actual credentials ID
     }
 
     stages {
