@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DEPLOY_SERVER = '65.0.142.195'
-        SSH_CREDENTIALS_ID = 'your-ssh-credentials-id'
+        SSH_CREDENTIALS_ID = 'your-ssh-credentials-id'  // Replace with your actual credentials ID
     }
 
     stages {
@@ -15,8 +15,8 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Add your build steps here
                 sh 'echo "Building the project..."'
+                // Add any actual build steps here if needed
             }
         }
         
@@ -26,7 +26,9 @@ pipeline {
                     sh """
                     ssh -o StrictHostKeyChecking=no ubuntu@${env.DEPLOY_SERVER} << EOF
                     cd /var/www/html
-                    git pull https://github.com/anujkem/memory-game.git
+                    sudo rm -rf memory-game
+                    git clone https://github.com/anujkem/memory-game.git
+                    sudo cp -r memory-game/* /var/www/html/
                     sudo systemctl restart nginx
                     EOF
                     """
